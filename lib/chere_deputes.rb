@@ -1,8 +1,7 @@
-require 'nokogiri' 
-require 'open-uri'
 require 'rubocop'
 require 'rspec'
-
+require 'nokogiri' 
+require 'open-uri'
 
 page = Nokogiri::HTML(URI.open("https://www2.assemblee-nationale.fr/deputes/liste/alphabetique"))   
 
@@ -29,6 +28,7 @@ def get_mail_url(page)
 end
 
 def get_email(array_url_mail)
+    puts "Veuillez Patienter"
   email_array=[]
   array_url_mail.map do |url|
     page = Nokogiri::HTML(URI.open(url))
@@ -40,7 +40,10 @@ end
 def array_hash_depute(email_array, array_first_name, array_last_name)
   array_depute=[]
   array_first_name.size.times do |i|
-    array_depute<<Hash[["first_name",array_first_name[i]]["last_name",array_last_name[i]]["email",email_array[i]]]
+    array_depute << hash = {
+      "first_name" => array_first_name[i],
+      "last_name"  => array_last_name[i],
+      "email"      => email_array[i]}
   end
   return puts array_depute
 end
