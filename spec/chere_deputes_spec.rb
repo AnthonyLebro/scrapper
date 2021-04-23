@@ -10,6 +10,6 @@ end
 
 describe "the array_hash_depute method" do 
   it "return array/hash with first name last name & email" do
-    expect(array_hash_depute(["xabi@gmal.eu"], ["xab"], ["ayca"])).to eq([{"first_name" => "xab", "last_name" => "ayca", "email"=> "xabi@gmal.eu"}])
+    expect(array_hash_depute(["antho@gmail.eu"], ["antho"], ["charr"])).to eq([{"first_name" => "Antho", "last_name" => "Charr", "email"=> "Antho@gmail.eu"}])
   end
 end

@@ -15,8 +15,8 @@ describe "The array_crypto_name method" do
   it "Include ETH" do
     expect(array_crypto_name.include?("ETH")).to eq(true)
   end
-  it "Not include xabi" do
-    expect(array_crypto_name.include?("xabi")).to eq(false)
+  it "Not include antho" do
+    expect(array_crypto_name.include?("antho")).to eq(false)
   end
 end
 
